@@ -1,0 +1,96 @@
+* {
+	font-family: Arial;
+
+}
+
+
+.navbar {
+	display: inline-block;
+	background-color: #ededed;
+	font-size: 1em;
+	text-align: center;
+	padding:0.5em;
+	width:100%;
+}
+
+.entry {
+	position:relative;
+	display:inline-block;
+}
+
+.entry:hover {
+	background-color: white;
+}
+
+.pagetitlebox {
+	border-bottom: 1px solid black;
+	display: block;
+	height:80px;
+	width:235px;
+	left:18%;
+	position:relative;
+}
+
+#main {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	font-size:3em;
+}
+
+#sub {position: absolute;
+	bottom: 15px;
+	left: 183px;
+	font-size:1em;
+}
+
+
+.uppercontainer {
+	position:absolute;
+	display:block;
+	width:64%;
+	left:18.55%;   /* <-- This is messed up!! Why doesn't it align with the upper box when they both have left: 18%; ? */     
+	height:300px;
+}
+
+#left {
+	list-style-type: none;
+	position:absolute;
+	width:30%;
+	height:100%;
+	border-right: 1px solid black;
+	text-align: center;
+}
+
+#right {
+	position:relative;
+	left:30%;
+	width:70%;
+	height:70%;
+	top:16%;
+}
+
+#right > img {
+	position:absolute;
+	right:5em;
+}
+
+.lowercontainer{
+	position:absolute;
+	display:block;
+	width:64%;
+	left:18.55%;  
+	height:300px;
+	top:460px;
+	text-align: center;
+}
+
+div.lowercontainer > span {
+	font-size: 2em;
+}
+#welcomecontent{
+	text-align: justify;
+}
+
+
+
