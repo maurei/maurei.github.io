@@ -1,25 +1,31 @@
 * {
-	font-family: Arial;
+	font-family: Verdana;
 
 }
 
 
 .navbar {
-	display: inline-block;
 	background-color: #ededed;
-	font-size: 1em;
-	text-align: center;
+	border:1px solid black;
+	margin-left: auto;
+	margin-right: auto;
+	width:1000px;
+	height: auto;
 	padding:0.5em;
-	width:100%;
 }
 
 .entry {
-	position:relative;
 	display:inline-block;
+	width: 200px;
+	height: auto;
+	font-size: 1em;
+	text-align: center;
 }
 
 .entry:hover {
 	background-color: white;
+	color: #ca2834;
+	border-radius:5px;
 }
 
 .pagetitlebox {
@@ -38,7 +44,8 @@
 	font-size:3em;
 }
 
-#sub {position: absolute;
+#sub {
+	position: absolute;
 	bottom: 15px;
 	left: 183px;
 	font-size:1em;
@@ -51,6 +58,7 @@
 	width:64%;
 	left:18.55%;   /* <-- This is messed up!! Why doesn't it align with the upper box when they both have left: 18%; ? */     
 	height:300px;
+
 }
 
 #left {
@@ -62,19 +70,26 @@
 	text-align: center;
 }
 
-#right {
-	position:relative;
-	left:30%;
-	width:70%;
-	height:70%;
-	top:16%;
-}
-
-#right > img {
+#picmain {
 	position:absolute;
-	right:5em;
+	height:240px;
+	width=height
+	display: inline-block;
+	left:200px;
+	top:30px;
 }
 
+#picsmall {
+	position: relative;
+	height:240px;
+	width:80px;
+	bottom:245px;
+	left:240px;
+}
+
+#picsmall > img {
+	display: block;
+}
 .lowercontainer{
 	position:absolute;
 	display:block;
