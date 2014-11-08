@@ -13,12 +13,24 @@
 <div class="middlewrap">
 	<div class="blogentry">
 		<div class="blogtitle">Struggling with CSS</div>
-		<div>Difficult concepts you will run into when learning CSS</div>
+		<div>Difficult concepts you mirght run into when learning CSS</div>
 		<div class="blogdate">November 8th, 2014</div>
 		<div class="blogdescription">
-			<p>
+			<p>This week was all about learning CSS and HTML. Actually, for me it was mainly wrapping my head around positioning of elements. We're supposed to pick one of the listed topics for this blog, but I'm going to be a rebel. I'm going to write about something that I really learnt this week, and that I would like to share. I think people who have had trouble with the solo challenge can really learn from this. However, I'm not to sure my strategy is the best way to do it. Hopefully, someone who did a better job than me can correct me with some nice feedback. By the way, my subject is actually quite close to some of the topics.</p>
+			
+			<p>When building a simple static webpage like I had to do, the biggest part of the development work consists of creating elements and positioning them. An element is as straight forward as it sounds: an image is an element, just like a paragraph of text or a large title. Something you can't see so easily is the structure, more or less the skeleton, in which these elements are put in.</p>
+
+			<p>When I started building my webpage, I started with creating only the elements, not really thinking about the underlying structure that keep those elements in place. I ended up in trying to position the elements using absolute and absolute positions; this simply allows you to define an elements position by shifting it from it's orginal position by an amount of pixels, relative to.... Relative to what, exactly? That often isn't a priori clear.</p>
+
+			<p>Messing around with these attributes for me often resulted in elements jumping all over the page when changing just a little bit of code somewhere in the beginning of my work, especially when I had elements inside of elements, and so on (for example: buttons inside a navigation menu). Having all these elements linked to eachother with absolute and relative links is like a ticking timebomb.</p>
+
+			<p>I found it convenient to forget about the position property for a bit and focus on somethign else: the display property. You see, elements can have different display modes, for example "block". A div is a block, and one of its properties is that it takes up the complete width of the line it is in. It won't let a title (a span-element, which is not by default a block) sit on the same line as the picture (also not by default a block), you just give the image the property to display as a block. This will force the title to jump to the next line.
 			</p>
-		</div>
+
+			<p>I found that wrapping al the relevant elements into divs (block-like elements) and messing around with display:block and display:inline-block (the latter will allow blocks to sit on the same line), things get easier. When having all sections of your page built out of (inline-) block-like elements, you will have a structured skeleton in which you can more easily position the relevant elements, without having to assign unique pixel-coordinates to each of them. Having such a skeleton, content within an "element-wrapper" is isolated from moving elements outsite that wrapper, because they're no longer linked by relative or absolute positions. </p>
+			
+
+
 		<div class="readmore"><a href="./index.html">Go back</a></div>
 	</div>
 </div>
