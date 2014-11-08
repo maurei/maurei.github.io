@@ -4,11 +4,11 @@ What were my expectations and how do I think they will comply?
 
 November 1th, 2014
 
-When I started my research about Dev Bootcamp, there were two things that caught my attention. Firstly, DBC is a relatively young company and secondly, participating will require hardcore discipline and effort. Both played a large role in my decision to sign up.
+When I started my research about Dev Bootcamp, there were two things that caught my attention. Firstly, DBC is a relatively young company and secondly, participating in DBC will require hardcore discipline and effort. Both played a large role in my decision to sign up.
 
 Since DBC is young, there wasn’t an enormous amount of reviews on which to base my decision. Unlike an acknowledged university, there is not much of a guarantee that the education will be good. That made it hard for me to convince my parents that it was a good idea to postpone the start of my Masters degree for a year. With the considerably high tuition, my father tried to push me towards MIT instead, since the fee there is about the same. Nevertheless, I didn't want to go to university, I wanted to pursue coding. 
 
-I never realized that exactly the young nature of DBC brings along a huge advantage. From my classes at university, I'm used to being told exactly what to do. DBC instead offers more room for your own input, as it is still in an "experimental phase", as denoted in Shereef's Fireside Chat. I’m really looking forward to what extent this difference in learning environment will affect me. I'm not exactly sure what to expect.
+I never realized that exactly the young nature of DBC brings a unique experience that comes with a lot of advantages. From my classes at university, I'm used to being told exactly what to do. DBC instead offers more room for your own input, as it is still in an "experimental phase", as denoted in Shereef's Fireside Chat. I’m really looking forward to what extent this difference in learning environment will affect me. I'm not exactly sure what to expect.
 
 What I also recall from my Physics classes is having to perform really hard. I'm used to studying 10 hours a day, and not just because it is the final week before one of my exams. DBCs environment will ask me for my discipline and I think I'm perfectly ready to give that.
 
