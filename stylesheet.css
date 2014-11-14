@@ -1,14 +1,26 @@
 * {
-	font-family: Arial;
+	font-family: "Lato";
 
 }
 
+@font-face {
+    font-family: "Lato";
+    src: url("./font/Lato.ttf");
+}
+
+body {
+	padding: 0;
+	margin: 0;
+}
 .navbarwrap {
+	display:block;
+	width:100%;
 	height:auto;
-	background-color:#ededed;
+	background-color:#444;
+	width: 100%;
 }
 .navbar {
-	background-color: #ededed;
+	background-color:#444;
 	margin-left: auto;
 	margin-right: auto;
 	width:800px;
@@ -24,20 +36,18 @@
 	text-align: center;
 }
 
-.entry > a {
+a {
 	text-decoration: none;
-	color: black;
+	color: #999999;
 }
 
 
 .entry:hover {
-	background-color: white;
-	color: #ca2834;
+	color: white;
 	border-radius:5px;
 }
-
-.titlewrap {
-	background-color: #ededed;
+.contentwrap{
+	background-color:;
 	display:block;
 	padding-top:15px;
 	height:auto;
@@ -45,16 +55,25 @@
 	margin-right: auto;
 	width:800px;
 }
+/*.titlewrap {
+	background-color: #ededed;
+	display:block;
+	padding-top:15px;
+	height:auto;
+	margin-left: auto;
+	margin-right: auto;
+	width:800px;
+}*/
 .titlebox {
 	border-bottom: 1.5px solid black;
 	display:inline-block;
 	height:auto;
 	font-size:5em;
 	text-align:center;
+	margin: 0 auto;
 }
 
 .upperwrap {
-	background-color: #ededed;	
 	display:block;
 	margin-left: auto;
 	margin-right: auto;
@@ -83,19 +102,13 @@
 	display: inline-block;
 	width:500px;
 	height:400px;
-	vertical-align:top;
+	vertical-align: top;
 }
 
-.centerwrapper{
-	display:table;
-	height:400px;
-	margin: 0 auto;
-	margin-top: 57px;    /* This is not the nice way of centering it in the div. Need to fix */
-	vertical-align: center;
-}
 .picwrap {
-	display: block;
-
+	display: table;
+	margin: 0 auto;
+	margin-top:15%;
 }
 
 .smallpicwrap{
@@ -108,7 +121,7 @@
 	padding-bottom:2px
 }
 
-
+/*
 .lowerwrap {
 	background-color: #ededed;
 	display:block;
@@ -116,7 +129,7 @@
 	margin-left: auto;
 	margin-right: auto;
 	width:800px;
-}
+}*/
 .lowertitlebox {
 	padding-top: 10px;
 	display:block;
@@ -138,10 +151,10 @@
 
 .footerwrap {
 	height:auto;
-	background-color:#ededed;
+	background-color:#444;
 }
 .footer {
-	background-color: #ededed;
+	background-color: #44;
 	margin-left: auto;
 	margin-right: auto;
 	width:800px;
@@ -153,11 +166,11 @@
 	display:block;
 	font-size: 0.7em;
 	text-align: center;
+	color:white;
 }
 
 /* anything new for the blog index below this comment*/
 .middlewrap {
-	background-color: #ededed;	
 	margin-left: auto;
 	margin-right: auto;
 	width:800px;
@@ -236,4 +249,10 @@
 	border: 1px solid black;
 	width:200px;
 	height:70px;
+}
+
+.code{
+	text-align: center;
+	font-size: 120%;
+	color:#dd0000;
 }
