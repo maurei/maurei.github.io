@@ -17,16 +17,18 @@ p {
     margin-right: auto;
     width:800px;
     background-color: #E0E0E0;
-    height: 650px;
+    height:100%;
 
     }
 
 body {
     padding: 0;
     margin: 0;
-    height: 650px;
 }
 
+html, body {
+  height:100%;
+}
 #centercontent {
         text-align: justify;
         width: 800px;
