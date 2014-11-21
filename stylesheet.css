@@ -1,6 +1,5 @@
 * {
 	font-family: "Lato";
-
 }
 
 @font-face {
@@ -66,8 +65,9 @@ a {
 	width:800px;
 }*/
 .titlebox {
-	border-bottom: 1.5px solid black;
 	display:inline-block;
+	position:relative;
+	left:10%;
 	height:auto;
 	font-size:5em;
 	text-align:center;
@@ -78,30 +78,50 @@ a {
 	display:block;
 	margin-left: auto;
 	margin-right: auto;
-	width:800px;
+	width:100%;
 	height:auto;
 }
 .upperleft {
-	border-right:1px solid black;
-	display:inline-block;
-	width:294px;
+	float:left;
+	width:50%;
 	height:400px;
 
 }
-
-.buttonwrapper {
+.socialmediatable {
 	display: table;
-	margin: 0 auto;  /* still need to vertically align these buttons */
+	position:relative;
+	left:20%;
+	margin-top:14%;
 }
-.buttonwrapper > a {
-	display:block;
-	padding-top:2px;
-	padding-bottom:2px;
+.tablerow {
+	display: table;
+	table-layout:fixed;
+	
+	height:83.3px;
+	margin:auto;
+
+
+}
+.tablerow > div {
+	display:table-cell;
+	margin: auto;
+}
+.tablerow > div > img {
+	margin: auto;
+	height:81px;
+	padding:2.5px;
+
+}
+
+img.socialmediabutton:hover {
+background-color: #444;
+border-radius:6px;
+
 }
 
 .upperright {
-	display: inline-block;
-	width:500px;
+	float:right;
+	width:50%;
 	height:400px;
 	vertical-align: top;
 }
@@ -113,13 +133,13 @@ a {
 }
 
 .smallpicwrap{
-	display:inline-block;
+float:right;
 }
 
 .smallpicwrap > img {
+	padding-left:0.em;
 	display: block;
-	padding-top:2px;
-	padding-bottom:2px
+	height: 83.3px;
 }
 
 /*
