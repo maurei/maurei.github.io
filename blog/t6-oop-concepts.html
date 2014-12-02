@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<link href="../stylesheet.css"; rel="stylesheet"; type="text/css"/>
+		<title></title>
+	</head>
+<body>
+<div class="navbarwrap">
+<div class="navbar">
+<a href="../index.html"><div class="entry">HOME</div></a><a href="../blog/index.html"><div class="entry">BLOG</div></a><a href="#"><div class="entry">PROJECTS</div></a><a href="../DBC/gps1-2.html"><div class="entry">DBC PAGES</div></a><a href="#"><div class="entry">ABOUT ME</div></a>
+</div>
+</div>
+<div class="middlewrap">
+	<div class="blogentry">
+		<div class="blogtitle">Blocks, Procs and Lambdas</div>
+		<div>What are they?</div>
+		<div class="blogdate">December 2nd, 2014</div>
+		<div class="blogdescription">
+		<p>
+		There are tons of ways to organize your code, and it is not always obvious how approaches differ. Three very similar concepts are blocks, procs and lambdas. I will outline the differences by demonstrating their use.
+		</p>
+		<p>
+		Presumably, you are most familiar with blocks. Blocks are the simplest and they are the starting point for procs and lambdas. A block is just a chunk of code that can be excuted - simple as that. They are denoted by curly brackets, {}, or by the keywords "do" and "end".
+		</p>
+		<p>One important thing to note about blocks is that they NEVER come alone. They always function as a part of a method, they simply can't exist without. Take for example an array that represents a collection of ages, and we want to keep only the children in it:<pre><code>
+ages = [11, 9, 52, 21, 16, 18, 88, 33, 26]
+ages.delete_if {  
+	|element| element < 21  
+}
+=> [11, 9, 16, 18]
+</code></pre>
+		Here, the block would've been meaningless without the method #delete_if. Elaborating on this example, the use of procs can be understood. Imagine having more arrays of ages, and we want to do the same for all of them:
+<pre><code>
+ages1 = [11, 9, 52, 21, 16, 18, 88, 33, 26]
+ages2 = [4, 11, 77, 44, 34, 14, 9, 8, 12]
+ages3 = [9, 12, 17, 100, 9, 49, 8, 16, 24]
+ages4 = [99, 34, 12, 46, 83, 11, 3, 5, 61]
+ages1.delete_if { |element| element < 21 }
+ages2.delete_if { |element| element < 21 }
+ages3.delete_if { |element| element < 21 }
+ages4.delete_if { |element| element < 21 }
+</code></pre>
+		Of course, there are plenty of other ways to make this code DRY, but you get the point: we have to write to block over and over again. What if we could just save the block and refer to it? Well, we can.
+<pre><code>
+my_proc = Proc.new { |element| element < 21 }
+ages1(&my_proc)
+ages2(&my_proc)
+ages3(&my_proc)
+ages4(&my_proc)
+</code></pre>
+		What can we conclude from this? A proc is a block saved to an object. That implies something very important: blocks aren't objects, procs are, they are part of the Proc class. That means that procs have all the advantages of objects, while blocks are just chunks of meaningless code if positioned isolatedly.</p>
+		<p>
+		Lets jump to lambdas. What are they? They are procs. That doesn't mean they are identical to procs, lambdas are part of the proc class. In the previous example, if we had an lambda definded as:
+<pre><code>
+my_lam = lambda { |element| element < 21 }
+</code></pre>
+		then replacing &my_proc with &my_lam have worked precisely the same.
+		Then.. What are the differences? There are two. Firstly, procs and lambdas respond differently to a number of arguments that deviates from the amount the code expects. Secondly, the two have a different way of returning.
+		</p>
+		<p>
+		Lets check out the first difference.
+<pre><code>
+my_lam = lambda { |x| puts x}		# 	lambda that takes 1 argument
+my_proc = Proc.new {|x| puts x}		# 	proc that takes 1 argument
+my_lam.call(1,2)					#	raises ArgumentError because two are given instead of one
+my_proc.call(1,2)					#	prints 1, forgets about 2
+my_lam.call							#	raises ArgumentError because zero are given instead of one
+my_proc.call						#	prints nil
+my_lam.call(1)						#	prints 1
+my_proc.call(1)						#	prints 1
+</code></pre>
+		As you can see, a proc will ignore any extra arguments, and fill up any absent arguments with nill. A lambda will just fail in these situations.</p>
+		<p>
+		Lastly, lets see how procs and lambdas handle returning.
+<pre><code>
+def lam_hi
+		my_lam = lambda { return }
+		my_lam.call
+		puts "Hi mr. Lambda!"
+end
+def proc_hi
+		my_proc = Proc.new { return }
+		my_proc.call
+		puts "Hi mr. Proc!"
+end
+
+lam_hi				# prints Hi mr. Lambda!
+proc_hi				# prints nil
+</code></pre>
+		<p>By observing the above example, you can conclude that a lambda will return to the code just outside of the lambda, while a proc will return outside of the method the proc is being executed in.
+		</p>
+
+		<p>
+		I will be back soon!
+		</p>
+		</div>
+		<div class="readmore"><a href="./index.html">Go back</a></div>
+	</div>
+</div>
+<div class="footerwrap">
+<div class="footer">
+<div class="footerentry">Blah Blah Some Copyright Thingy</div>
+</div>
+</div>
+</body>
+</html>
+
+

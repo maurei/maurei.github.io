@@ -274,6 +274,13 @@ float:right;
 	height:70px;
 }
 
+code{
+	text-align: left;
+	font-size: 120%;
+	color:#dd0000;
+	padding:2em;
+}
+
 .code{
 	text-align: center;
 	font-size: 120%;
