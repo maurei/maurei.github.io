@@ -77,6 +77,7 @@ var dwarf = {
 	has_gold:0,
 	position:[0,0],
 };
+alert("Collect all the coins!")
 var coin = {
 	coin1:[100,300],
 	coin2:[400,400],
@@ -88,32 +89,33 @@ var coin1_element = document.getElementById("coin1");
 var coin2_element = document.getElementById("coin2");
 var coin3_element = document.getElementById("coin3");
 
+document.onkeydown = move;
 
 function move(key) {
- if(key.KeyCode===37){
+ if(key.keyCode===37){
  	if(dwarf.position[0]>0){
- 		dwarf.position[0]-=100
- 		dwarf_element.style.left=dwarf.position[0]+"px"
+ 		dwarf.position[0]-=100;
+ 		dwarf_element.style.left=dwarf.position[0]+"px";
  	}
  }
- else if(key.KeyCode===38){
+ if(key.keyCode===38){
  	if(dwarf.position[1]>0){
- 		dwarf.position[1]+=100
- 		dwarf_element.style.top=dwarf.position[1]+"px"
+ 		dwarf.position[1]-=100;
+ 		dwarf_element.style.top=dwarf.position[1]+"px";
  	}
  }
- else if(key.KeyCode===39){
- 	if(dwarf.position[1]<400){
- 		dwarf.position[1]-=100
-  		dwarf_element.style.top=dwarf.position[1]+"px"
- 	}
- }
- else if(key.KeyCode===40){
+ if(key.keyCode===39){
  	if(dwarf.position[0]<400){
- 		dwarf.position[0]+=100
- 		dwarf_element.style.left=dwarf.position[0]+"px"
+ 		dwarf.position[0]+=100;
+ 		dwarf_element.style.left=dwarf.position[0]+"px";
  	}
  }
+ if(key.keyCode===40){
+ 	if(dwarf.position[1]<400){
+ 		dwarf.position[1]+=100;
+ 		dwarf_element.style.top=dwarf.position[1]+"px";
+ 	}
+ };
 grab_gold();
 };
 
@@ -122,16 +124,19 @@ function grab_gold(){
 		dwarf.has_gold+=1;
 		delete coin.coin1;
 		alert("You got one! deleted this coin")
+		coin1_element.style.visibility="hidden"
 	}
 	if(dwarf.position.equals(coin.coin2)){
 		dwarf.has_gold+=1;
 		delete coin.coin2;
 		alert("You got one! deleted this coin")
+		coin2_element.style.visibility="hidden"
 	}
 	if(dwarf.position.equals(coin.coin3)){
 		dwarf.has_gold+=1;
 		delete coin.coin3;
 		alert("You got one! deleted this coin")
+		coin3_element.style.visibility="hidden"
 	}
 	win_check();
 };
@@ -142,7 +147,6 @@ function win_check(){
 	}
 }
 
-document.onkeydown = move;
 
 </script>
 </body>
