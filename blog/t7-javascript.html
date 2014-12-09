@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<link href="../stylesheet.css"; rel="stylesheet"; type="text/css"/>
+		<title></title>
+	</head>
+<body>
+<div class="navbarwrap">
+<div class="navbar">
+<a href="../index.html"><div class="entry">HOME</div></a><a href="../blog/index.html"><div class="entry">BLOG</div></a><a href="#"><div class="entry">PROJECTS</div></a><a href="../DBC/gps1-2.html"><div class="entry">DBC PAGES</div></a><a href="#"><div class="entry">ABOUT ME</div></a>
+</div>
+</div>
+<div class="middlewrap">
+	<div class="blogentry">
+		<div class="blogtitle">JavaScript versus Ruby</div>
+		<div>Some of their differences</div>
+		<div class="blogdate">December 9th, 2014</div>
+		<div class="blogdescription">
+			<p>At the beginning of my preperation for Dev Bootcamp, I have read about the beauty and simplicity of Ruby, making it one of the best languages for building applications. Having nothing to compare Ruby with, it was something I would take for granted. Reading about Ruby's built-in functionality meant nothing to me. Recently, I started with JavaScript, and now I'm starting to see what it means to say "Ruby is simplistic".
+			</p>
+			<p>
+			As far as I've seen, Ruby's simplicity has a lot to do with syntax, where JavaScript's syntax appears to be a whole lot more sensitive to errors. I picked one example that nicely demonstrates this difference: iterating over an array.
+			</p>
+			<p>
+			Imagine we have an array of names, and we want to print each of them. Defining the array in Ruby:
+<pre><code>
+array = ["Eric", "John", "Roger"]
+</code></pre>
+			And in JavaScript:
+<pre><code>
+var array = ["Eric", "John", "Roger"];
+</code></pre>
+			As you can see, in the JavaScript definition, there are already two new components. Firstly, "var" always comes in front when assigning a variable, and secondly (optional though it is a convention) the semi-colon after an expression. These differences aren't that terrible, but it already shows a sign of Ruby's simpilicty.
+			</p>
+			<p>
+			When it comes to iterating over the array, the differences are more illustrating. In Ruby, we would use the #each method like this:
+<pre><code>
+array.each { |name|
+	puts name
+}
+</code></pre>			
+			With one iteration, an element of the array is passed to the block parameter (name). Then, the line of code is executed, printing out the name, after which the next iteration starts. One thing to realise is that this method inherently knows how to move to the next element in the array. That is something you'll need to write yourself when iterating over an array in JavaScript.
+			</p>
+			<p>
+			The JavaScript iteration looks like this:
+<pre><code>
+for(var i = 0, var length = array.length; i < length; i++){
+	console.log(arr[i]);
+}
+</code></pre>
+			Within the parentheses right after "for", there are three expressions. After that, there is the block of code that will be executed. Starting from the left, the first statement will be executed before the block is run. The second is the condition for the block to be executed. The third one gets executed after each execution of the block.
+			</p>
+			<p>
+			The first statements defines a counter variable starting at zero, i = 0. Also, length is defined as the length of the array. Then, the condition statement is the equivalent of saying "stop when you have reached the end of the array". After that, i++ is executed after each block, which increments i by one. Finally, the block consists of JavaScripts equivalent of Ruby's puts, with as argument an array's element at index i.
+			</p>
+			<p>Where Ruby inherently knew how to move from one element to the next, in JavaScript we have manually select an element from the array using indices, and write how to increment the value of the index as long as it hasn't reached the end of the array.
+			</p>
+			<p>
+			It is clear that Ruby offers a much more simplistic solution in this case. An advantage of having to write the statements for JavaScript, is that there is much more flexibility. We could easily run the iteration in reverse order by just altering the statement a little, where in Ruby, there is a whole new method called #reverse_each. Performance-wise, JavaScript is superior in this situation.
+			</p>
+		</div>
+		<div class="readmore"><a href="./index.html">Go back</a></div>
+	</div>
+</div>
+<div class="footerwrap">
+<div class="footer">
+<div class="footerentry">Blah Blah Some Copyright Thingy</div>
+</div>
+</div>
+</body>
+</html>
+
+
