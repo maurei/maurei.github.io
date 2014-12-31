@@ -229,6 +229,10 @@ float:right;
 	text-align: justify;
 }
 
+#latex{
+	display:inline-block;
+	margin: 0 auto;
+}
 .readmore {
 	display:block;
 	font-size: 1em;
