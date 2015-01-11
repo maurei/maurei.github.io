@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<link href="../stylesheet.css"; rel="stylesheet"; type="text/css"/>
+		<title></title>
+		<script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+	</head>
+<body>
+<div class="navbarwrap">
+<div class="navbar">
+<a href="../index.html"><div class="entry">HOME</div></a><a href="../blog/index.html"><div class="entry">BLOG</div></a><a href="#"><div class="entry">PROJECTS</div></a><a href="../DBC/gps1-2.html"><div class="entry">DBC PAGES</div></a><a href="#"><div class="entry">ABOUT ME</div></a>
+</div>
+</div>
+<div class="middlewrap">
+	<div class="blogentry">
+		<div class="blogtitle">The Big-O Notation</div>
+		<div>A mathematical principle applied in Computer Sciences</div>
+		<div class="blogdate">December 16th, 2014</div>
+		<div class="blogdescription">
+		<p>To some, programming is like magic. Grasping the basic principles of looping, conditional statements, functions and classes isn't the easiest thing to do, but eventually its all logics and you should be able to get point of understanding it. However, the deeper you get into programming, the more abstract principles will get. One of them is de Landau Symbol,</p>
+		<div id="latex"; lang="latex">\mathcal O(f(n))</div> 
+		<p>which is something I will try to make you comfort with in this blog. Firstly, I will make sense of it mathematically. Then I will apply it to programming.</p>
+		<p>The Landau Symbol is used to denote at which <i>order</i> a function grows. For example, let</p>
+		<div id="latex"; lang="latex">f(n) = n^2 + n - c.</div>
+		<p>Here, the function grows at the order of n<sup>2</sup>, the lower order terms can be neglected at large n, because n<sup>2</sup> will be dominant. (Just try it out by filling in a <i>very</i> large number). And so we may write:</p>
+		<div id="latex"; lang="latex">f(n) = \mathcal O(n^2).</div>
+		<p>A formal definition, which is of use in understanding the application of the Landau Symbol in programming, is as follows. Consider two real functions f(x) and g(x). Then, for some C and for some N, if and only if </p>
+		<div id="latex"; lang="latex">\left|f(x)\right| \leq C\left|g(x)\right| \;\;\; \forall \;\; \smallskip x>N, </div>
+		<p>we may write </p>
+		<div id="latex"; lang="latex">f(n)= \mathcal O(g(n)) \;\;\; \text{where} \; x \rightarrow \infty. \;\;\; \text{(eqn. 1)}</div>
+		<p>Lets rephrase this to plain english. The absolute symbols makes positives values out of the functions which are evaluated at a certain x, to be able to make a useful comparison. The condition then states that, in particular for large x, f(n) is always smaller or equal than a (rescaled) version of g(n). More intuitively: f(n) will never grow larger than g(n); at most it will (asymptotically) approach g(n) for very large values x. If this condition is met, then we may write the previous equation. It says that f(n) grows at the order of g(n). It does that generally only for very large x, lets call the case in which x goes to infinity the "worst case scenario", for now.<p>
+		<p>Lets jump towards programming. What does the Landau Symbol describe in this context? The Landau Symbol is important to performance analysis. Performance of the code - mainly determined by cpu time - is important to keep in mind when building complex applications. The time required to execute code is poportional to its complexity, which in turn is expressed using the Big-O notation. Complexity is quantified by basic operations like arithmetic operations, variable assignments, tests, reads and writes. I will demonstrate this with a couple of examples.</p>
+
+		<p>For example, if we chain an k amount of basic operations (like assignment or arithmetic), then the time T is found as follows:</p>
+		<div id="latex"; lang="latex">T_{total} = T(\text{expression 1}) + T(\text{expression 2}) + .... + T(\text{expression k})</div>
+		<p>Since each expression is basic, the time for each expression is constant. That means that the total time is also constant:</p>
+		<div id="latex"; lang="latex"> T \propto \mathcal O(1)</div>
+		<p>The next example is a conditional statement Consider the following code.
+<pre><code>
+if condition
+	code to execute
+elsif condition
+	code to execute
+...
+else condition
+	code to execute
+end
+</code></pre>
+		Here, the time depends on when which condition will evaluate true. In this case, for the Big-O notation, the <i>worst case scenario</i>as with the formal defintion is regarded. Then, the complexity is linear in the amount of conditions N:</p>
+		<div id="latex"; lang="latex">T \propto \mathcal O(N)</div>
+		<p>For loops, the Big-O value is the same. The loop is executed N times, so</p>
+		<div id="latex"; lang="latex">T \propto \mathcal O(N)</div>
+		<p>When creating nested loops, things tend to slow down. For each interation from the initial loop, a second loop is executed M times.</p>
+		<div id="latex"; lang="latex">T \propto \mathcal O(N*M)</div>
+		<p>Or, assuming that the loops have equal size, M=N:</p>
+		<div id="latex"; lang="latex">T \propto \mathcal O(N^2)</div>.
+		<p>These are just the basics with Big-O notation - things can get much more (mathematically) complicated. Get used to it!
+		</div>
+		<div class="readmore"><a href="./index.html">Go back</a></div>
+	</div>
+</div>
+<div class="footerwrap">
+<div class="footer">
+<div class="footerentry">Blah Blah Some Copyright Thingy</div>
+</div>
+</div>
+</body>
+</html>
+
+

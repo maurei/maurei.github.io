@@ -1,0 +1,79 @@
+
+#header {
+        font-size: 4em;
+        font-family: sans-serif;
+        text-align: center;
+
+    }
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.wholepage {
+    display:block;
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    width:800px;
+    background-color: #E0E0E0;
+    height:100%;
+
+    }
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+  height:100%;
+}
+#centercontent {
+        text-align: justify;
+        width: 800px;
+        clear:both;
+        padding-top:5%;
+
+    }
+
+.title {
+        text-align: center;
+    }
+
+.content {
+        padding: 0.4em;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 80px;
+
+}
+
+.upperbox-outer {
+        width: 800px;
+        display:block;
+
+    }
+
+#aboutus {
+      float:left;
+      width:300px
+
+
+    }
+
+#picturebox {
+      float:right;
+      width: 500px;
+      border:0px;
+      padding:0px;
+      margin:0px;
+
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}

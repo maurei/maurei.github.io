@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<link rel="stylesheet"; type="text/css"/>
+		<title>Crappy JavaScript Game</title>
+	</head>
+<body>
+	<style>
+	#map {
+		width:500px;
+		height:500px;
+		background-image: url("map.png");
+		position:relative;
+	}
+	#dwarf {
+		background-image: url("dwarf.png");
+		position:absolute;
+		width:100px;
+		height:100px;
+
+	}
+	.gold {
+		width:100px;
+		height:100px;
+		padding:0px;
+		margin:0px;
+		background-image: url("coin.png");
+	}
+	#coin1 {
+		position:absolute;
+		left:100px;
+		top:300px;
+	}
+	#coin2 {
+		position:absolute;
+		left:400px;
+		top:400px;
+	}
+	#coin3 {
+		position:absolute;
+		left:300px;
+		top:100px;
+	}
+	</style>
+	<div id="map">
+		<div id="dwarf"></div>
+		<div class="gold" id="coin1"></div>
+		<div class="gold" id="coin2"></div>
+		<div class="gold" id="coin3"></div>
+	</div>
+<script>
+Array.prototype.equals = function (array) {
+    // if the other array is a falsy value, return
+    if (!array)
+        return false;
+
+    // compare lengths - can save a lot of time 
+    if (this.length != array.length)
+        return false;
+
+    for (var i = 0, l=this.length; i < l; i++) {
+        // Check if we have nested arrays
+        if (this[i] instanceof Array && array[i] instanceof Array) {
+            // recurse into the nested arrays
+            if (!this[i].equals(array[i]))
+                return false;       
+        }           
+        else if (this[i] != array[i]) { 
+            // Warning - two different object instances will never be equal: {x:20} != {x:20}
+            return false;   
+        }           
+    }       
+    return true;
+}  
+// ^^^^ got this from http://stackoverflow.com/questions/7837456/comparing-two-arrays-in-javascript
+var dwarf = {
+	has_gold:0,
+	position:[0,0],
+};
+alert("Collect all the coins!")
+var coin = {
+	coin1:[100,300],
+	coin2:[400,400],
+	coin3:[300,100],
+};
+
+var dwarf_element = document.getElementById("dwarf");
+var coin1_element = document.getElementById("coin1");
+var coin2_element = document.getElementById("coin2");
+var coin3_element = document.getElementById("coin3");
+
+document.onkeydown = move;
+
+function move(key) {
+ if(key.keyCode===37){
+ 	if(dwarf.position[0]>0){
+ 		dwarf.position[0]-=100;
+ 		dwarf_element.style.left=dwarf.position[0]+"px";
+ 	}
+ }
+ if(key.keyCode===38){
+ 	if(dwarf.position[1]>0){
+ 		dwarf.position[1]-=100;
+ 		dwarf_element.style.top=dwarf.position[1]+"px";
+ 	}
+ }
+ if(key.keyCode===39){
+ 	if(dwarf.position[0]<400){
+ 		dwarf.position[0]+=100;
+ 		dwarf_element.style.left=dwarf.position[0]+"px";
+ 	}
+ }
+ if(key.keyCode===40){
+ 	if(dwarf.position[1]<400){
+ 		dwarf.position[1]+=100;
+ 		dwarf_element.style.top=dwarf.position[1]+"px";
+ 	}
+ };
+grab_gold();
+};
+
+function grab_gold(){
+	if(dwarf.position.equals(coin.coin1)){
+		dwarf.has_gold+=1;
+		delete coin.coin1;
+		alert("You got one! deleted this coin")
+		coin1_element.style.visibility="hidden"
+	}
+	if(dwarf.position.equals(coin.coin2)){
+		dwarf.has_gold+=1;
+		delete coin.coin2;
+		alert("You got one! deleted this coin")
+		coin2_element.style.visibility="hidden"
+	}
+	if(dwarf.position.equals(coin.coin3)){
+		dwarf.has_gold+=1;
+		delete coin.coin3;
+		alert("You got one! deleted this coin")
+		coin3_element.style.visibility="hidden"
+	}
+	win_check();
+};
+
+function win_check(){
+	if(dwarf.has_gold===3){
+		alert("You win! Well done!")
+	}
+}
+
+
+</script>
+</body>
+</html>
